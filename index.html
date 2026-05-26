@@ -1,0 +1,90 @@
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- ═══════════════════════════════════════ START ══ -->
+<div id="start-screen" class="screen">
+  <div class="star-bg" id="stars"></div>
+  <div class="title-block">
+    <div class="title-label">// typing rhythm game</div>
+    <div class="title-main">CodeBeat</div>
+    <div class="title-sub">단어를 타이핑해서 화면을 지켜라</div>
+  </div>
+  <div class="diff-row">
+    <button class="diff-btn active" data-diff="easy">Easy</button>
+    <button class="diff-btn" data-diff="normal">Normal</button>
+    <button class="diff-btn" data-diff="hard">Hard</button>
+  </div>
+  <button class="start-btn" id="start-btn">[ START ]</button>
+  <div class="hs-display" id="hs-display">최고 기록: <span id="hs-val">—</span></div>
+</div>
+
+<!-- ═══════════════════════════════════════ GAME ═══ -->
+<div id="game-screen" class="screen hidden">
+  <div class="combo-glow" id="combo-glow"></div>
+
+  <div class="hud">
+    <div class="hud-item">
+      <div class="hud-label">Score</div>
+      <div class="hud-value accent" id="hud-score">0</div>
+    </div>
+    <div class="hud-item">
+      <div class="hud-label">Combo</div>
+      <div class="hud-value yellow" id="hud-combo">x1</div>
+    </div>
+    <div class="hud-item">
+      <div class="hud-label">Lives</div>
+      <div class="lives-row" id="lives-row"></div>
+    </div>
+    <div class="hud-item">
+      <div class="hud-label">WPM</div>
+      <div class="hud-value green" id="hud-wpm">0</div>
+    </div>
+    <div class="hud-item">
+      <div class="hud-label">Acc</div>
+      <div class="hud-value" id="hud-acc">100%</div>
+    </div>
+    <div class="hud-item">
+      <div class="hud-label">Time</div>
+      <div class="hud-value" id="hud-time">60</div>
+    </div>
+  </div>
+
+  <div class="canvas-zone" id="canvas-zone">
+    <canvas id="bg-canvas"></canvas>
+  </div>
+
+  <div class="input-zone">
+    <div class="input-wrap">
+      <input class="type-input" id="type-input" placeholder="여기에 타이핑하세요…" autocomplete="off" autocorrect="off" spellcheck="false">
+      <div class="input-hint">ESC = 일시정지 &nbsp;|&nbsp; 정확히 입력하고 Enter 또는 Space</div>
+    </div>
+  </div>
+
+  <div class="pause-overlay" id="pause-overlay">
+    <div class="pause-title">// PAUSED</div>
+    <div class="pause-hint">ESC 또는 클릭으로 재개</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ RESULT ═ -->
+<div id="result-screen" class="screen hidden">
+  <div class="star-bg" id="result-stars"></div>
+  <div class="new-hs-badge hidden" id="new-hs-badge">✦ NEW HIGH SCORE ✦</div>
+  <div class="result-title" id="result-title">GAME OVER</div>
+  <div class="result-stats">
+    <div class="stat-cell">
+      <div class="stat-num" id="r-score">0</div>
+      <div class="stat-lbl">Score</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num" id="r-wpm">0</div>
+      <div class="stat-lbl">WPM</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num" id="r-acc">0%</div>
+      <div class="stat-lbl">Accuracy</div>
+    </div>
+  </div>
+  <div class="result-btns">
+    <button class="res-btn primary" id="retry-btn">[ 다시하기 ]</button>
+    <button class="res-btn secondary" id="menu-btn">[ 메뉴로 ]</button>
+  </div>
+</div>
